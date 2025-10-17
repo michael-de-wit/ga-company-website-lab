@@ -202,13 +202,38 @@ app.get(`/history`, (req, res) => {
 app.get(`/work`, (req, res) => {
     res.render('work.ejs', {
         companyName: companyName,
-        foundingStory: companyData.foundingStory,
-        founderNames: companyData.founders,
-        foundingDate: companyData.foundedDate,
-
         socials: companyData.socials,
         contactInfo: companyData.contact,
 
+        pastWork: companyData.pastWork
+    })
+})
+app.get(`/products`, (req, res) => {
+    res.render('products.ejs', {
+        companyName: companyName,
+        socials: companyData.socials,
+        contactInfo: companyData.contact,
+    })
+})
+app.get(`/staff`, (req, res) => {
+    res.render('staff.ejs', {
+        companyName: companyName,
+        socials: companyData.socials,
+        contactInfo: companyData.contact,
+    })
+})
+app.get(`/contact`, (req, res) => {
+    res.render('contact.ejs', {
+        companyName: companyName,
+        socials: companyData.socials,
+        contactInfo: companyData.contact,
+    })
+})
+app.get(`/links`, (req, res) => {
+    res.render('links.ejs', {
+        companyName: companyName,
+        socials: companyData.socials,
+        contactInfo: companyData.contact,
     })
 })
 

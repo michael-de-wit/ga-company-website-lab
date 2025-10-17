@@ -1,6 +1,15 @@
 <%- include(`./partials/htmlhead`) %>
 <%- include(`./partials/nav`)%>
 
-<p>test</p>
+<h1>Past Work</h1>
+<ul>
+    <% pastWork.forEach(project => { %>
+        <li>
+            <img src="<%= project.img %>"/>
+            <h3><%= project.company %></h3>
+            <p><%= project.shortDescription %></p>
+        </li>
+    <% }) %>
+</ul>
 
 <%- include(`./partials/footer`) %>
