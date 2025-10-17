@@ -1,4 +1,23 @@
 <%- include(`./partials/htmlhead`) %>
 <%- include(`./partials/nav`)%>
 
+<h1>Staff</h1>
+<ul>
+    <% staff.forEach(staffMember => { %>
+        <li>
+           <img src="<%= staffMember.photo %>"/>
+            <h3><%= staffMember.name %></h3>
+            <p><%= staffMember.title %></p>
+            <p><%= staffMember.blurb %></p>
+            <p><%= staffMember.contactInfo.email %></p>
+            <p><%= staffMember.contactInfo.phone %></p>
+            <ul>
+                <% staffMember.contactInfo.socials.forEach(social => { %>
+                    <a href="<%= social.link %>"><li><%= social.type %></li></a>
+                <% }) %>
+            </ul>
+        </li>
+    <% }) %>
+</ul>
+
 <%- include(`./partials/footer`) %>

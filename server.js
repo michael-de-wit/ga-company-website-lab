@@ -64,7 +64,7 @@ const companyData = {
             name: "Hemlock AI",
             price: "₵499",
             description:
-            "An ancient intelligence bound within digital code—analyzing data, predicting prey, and managing coven affairs.",
+                "An ancient intelligence bound within digital code—analyzing data, predicting prey, and managing coven affairs.",
             rating: 4.8,
             application:
                 "Ideal for cryptic analytics, prophecy simulation, and eternal business management."
@@ -78,13 +78,20 @@ const companyData = {
             contactInfo: {
                 email: "vespera@crimsonveil.com",
                 phone: "+1 (666) 234-5678",
-                socials: {
-                    linkedin: "https://linkedin.com/in/vesperadrayke",
-                    twitter: "https://twitter.com/countessvespera"
-                }
+                socials: [
+                    {
+                        type: `linkedin`,
+                        link: "https://linkedin.com/in/vesperadrayke"
+                    },
+                    {
+                        type: `twitter`,
+                        link: "https://twitter.com/countessvespera"
+                    }
+                ] 
+              
             },
             blurb:
-            "Guiding the coven with wisdom older than the dawn — and sharper than her fangs."
+                "Guiding the coven with wisdom older than the dawn — and sharper than her fangs."
         },
         {
             name: "Lucien Graves",
@@ -93,16 +100,22 @@ const companyData = {
             contactInfo: {
                 email: "lucien@crimsonveil.com",
                 phone: "+1 (666) 345-6789",
-                socials: {
-                    github: "https://github.com/luciengraves",
-                    linkedin: "https://linkedin.com/in/luciengraves"
-                }
+                socials: [
+                    {
+                        type: `github`,
+                        link: "https://github.com/luciengraves"
+                    },
+                    {
+                        type: `linkedin`,
+                        link: "https://linkedin.com/in/luciengraves"
+                    },
+                ]
             },
             blurb:
-            "Breathing life into code — or what's left of it — through dark innovation and arcane algorithms."
+                "Breathing life into code — or what's left of it — through dark innovation and arcane algorithms."
         }
     ],
-    
+
     socials: [
         {
             type: `facebook`,
@@ -222,6 +235,8 @@ app.get(`/staff`, (req, res) => {
         companyName: companyName,
         socials: companyData.socials,
         contactInfo: companyData.contact,
+
+        staff: companyData.staff
     })
 })
 app.get(`/contact`, (req, res) => {
