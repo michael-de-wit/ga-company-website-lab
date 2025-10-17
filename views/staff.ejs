@@ -3,11 +3,13 @@
 
 <h1>Staff</h1>
 <ul>
-    <% staff.forEach(staffMember => { %>
+    <% staff.forEach((staffMember, index) => { %>
         <li>
-           <img src="<%= staffMember.photo %>"/>
-            <h3><%= staffMember.name %></h3>
-            <p><%= staffMember.title %></p>
+            <a href="/staff/<%= index %>">
+                <img src="<%= staffMember.photo %>"/>
+                <h3><%= staffMember.name %></h3>
+                <p><%= staffMember.title %></p>
+            </a>
             <p><%= staffMember.blurb %></p>
             <p><%= staffMember.contactInfo.email %></p>
             <p><%= staffMember.contactInfo.phone %></p>

@@ -248,6 +248,18 @@ app.get(`/staff`, (req, res) => {
         staff: companyData.staff
     })
 })
+
+app.get(`/staff/:staffID`, (req, res) => {
+    const staffId = req.params.staffID
+    res.render('show-staff.ejs', {
+        companyName: companyName,
+        socials: companyData.socials,
+        contactInfo: companyData.contact,
+
+        staff: companyData.staff[staffId]
+    })
+})
+
 app.get(`/contact`, (req, res) => {
     res.render('contact.ejs', {
         companyName: companyName,

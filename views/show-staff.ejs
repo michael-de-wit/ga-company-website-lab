@@ -1,0 +1,17 @@
+<%- include(`./partials/htmlhead`) %>
+<%- include(`./partials/nav`)%>
+
+<h1><%= staff.name %></h1>
+<img src="/<%= staff.photo %>"/>
+<p><%= staff.title %></p>
+<p><%= staff.blurb %></p>
+<p><%= staff.contactInfo.email %></p>
+<p><%= staff.contactInfo.phone %></p>
+<ul>
+    <% staff.contactInfo.socials.forEach(social => { %>
+        <a href="<%= social.link %>"><li><%= social.type %></li></a>
+    <% }) %>
+</ul>
+
+
+<%- include(`./partials/footer`) %>
