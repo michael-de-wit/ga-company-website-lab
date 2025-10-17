@@ -154,11 +154,12 @@ const companyData = {
         }
     ],
     foundedDate: 1437,
-    foundingStory: `lorem`
+    foundingStory: `Born under the Blood Moon of 1437, Crimson Veil began as a secret alliance of scholars, inventors, and vampires seeking to merge ancient alchemy with emerging human technologies. For centuries, we’ve thrived in the shadows, perfecting our craft while guiding mortal innovation from behind the veil. Today, we emerge — not to dominate the daylight, but to redefine what’s possible in the twilight between magic and machine. Our story is one of persistence, passion, and the pursuit of eternal perfection.`
 };
 
 const companyName = companyData.companyName
-companyData.founders = [
+
+companyData.founders = [ // Add the first 2 staff members as the founds
         companyData.staff[0],
         companyData.staff[1]
 ]
