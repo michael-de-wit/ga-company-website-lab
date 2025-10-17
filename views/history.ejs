@@ -1,0 +1,20 @@
+<%- include(`./partials/htmlhead`) %>
+<%- include(`./partials/nav`)%>
+<h1>History</h1>
+<p>Founded in: <%= foundingDate %></p>
+<p><%= foundingStory %></p>
+<!-- Loop through founders array
+Extract the names of the founders
+     List out the names, titles, and contact info -->
+     <ul>
+        <% founderNames.forEach((founder) => { %>
+            <li>
+                <h4><%= founder.name %></h4>
+                <p><%= founder.title %></p>
+                <p><%= founder.contactInfo.email %></p>
+            </li>
+            
+            
+            <% }) %>
+        </ul>
+<%- include(`./partials/footer`) %>

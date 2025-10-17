@@ -101,13 +101,28 @@ const companyData = {
         }
     ],
 
-    socials: {
-        facebook: "https://facebook.com/crimsonveil",
-        instagram: "https://instagram.com/crimsonveil",
-        twitter: "https://twitter.com/crimsonveilco",
-        linkedin: "https://linkedin.com/company/crimsonveil",
-        youtube: "https://youtube.com/@crimsonveil"
-    },
+    socials: [
+        {
+            type: `facebook`,
+            link: "https://facebook.com/crimsonveil"
+        },
+        {
+            type: `instagram`,
+            link: "https://instagram.com/crimsonveil"
+        },
+        {
+            type: `twitter`,
+            link: "https://twitter.com/crimsonveilco"
+        },
+        {
+            type: `linkedin`,
+            link: "https://linkedin.com/company/crimsonveil"
+        },
+        {
+            type: `youtube`,
+            link: "https://youtube.com/@crimsonveil"
+        }
+    ],
 
     testimonials: [
         {
@@ -160,8 +175,8 @@ const companyData = {
 const companyName = companyData.companyName
 
 companyData.founders = [ // Add the first 2 staff members as the founds
-        companyData.staff[0],
-        companyData.staff[1]
+    companyData.staff[0],
+    companyData.staff[1]
 ]
 
 app.get(`/`, (req, res) => {
@@ -172,10 +187,15 @@ app.get(`/`, (req, res) => {
 
 app.get(`/history`, (req, res) => {
     res.render('history.ejs', {
-        companyName: companyName
+        companyName: companyName,
+        foundingStory: companyData.foundingStory,
+        founderNames: companyData.founders,
+        foundingDate: companyData.foundedDate,
+
+        socials: companyData.socials,
+        contactInfo: companyData.contact
     })
 })
-
 
 //Listening
 app.listen(3000, () => {
