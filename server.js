@@ -213,6 +213,8 @@ app.get(`/products`, (req, res) => {
         companyName: companyName,
         socials: companyData.socials,
         contactInfo: companyData.contact,
+
+        products: companyData.products
     })
 })
 app.get(`/staff`, (req, res) => {
