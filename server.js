@@ -2,163 +2,179 @@
 const express = require('express');
 const app = express();
 
-app.use(express.static('public')); 
+app.use(express.static('public'));
 
 // Data
 const companyData = {
-  companyName: "Placeholder Company Name",
+    companyName: "Crimson Veil Enterprises",
 
-  companyInfo: {
-    tagline: "Innovating Tomorrow, Today.",
-    description:
-      "Placeholder Company is a leading innovator in technology and design, offering world-class solutions to global clients across multiple industries."
-  },
-
-  contact: {
-    address: {
-      street: "123 Innovation Street",
-      city: "Creativity City",
-      state: "Imagination State",
-      zip: "12345",
-      country: "Placeholderland"
+    companyInfo: {
+        tagline: "Illuminating the Night Through Eternal Innovation.",
+        description:
+            "Crimson Veil Enterprises stands as a premier force in nocturnal technology and arcane design, crafting timeless solutions for immortal clientele across the realms."
     },
-    phone: "+1 (555) 123-4567",
-    email: "info@placeholdercompany.com",
-    form: {
-      fields: ["name", "email", "subject", "message"],
-      submitText: "Send Message",
-      successMessage: "Thank you for reaching out! We'll get back to you soon."
-    },
-    additionalInfo: {
-      hours: "Mon–Fri: 9am – 5pm",
-      mapEmbedUrl: "https://maps.google.com/?q=Placeholder+Company"
-    }
-  },
-
-  pastWork: [
-    {
-      img: "images/work1.jpg",
-      company: "ClientCorp",
-      shortDescription:
-        "Developed a responsive e-commerce platform that increased sales by 30%."
-    },
-    {
-      img: "images/work2.jpg",
-      company: "Designify",
-      shortDescription:
-        "Created a bold new brand identity and website redesign for a creative agency."
-    }
-  ],
-
-  products: [
-    {
-      name: "Product 1",
-      price: "$99",
-      description:
-        "A versatile tool designed to simplify your daily workflow.",
-      rating: 4.5,
-      application: "Used for productivity and project management."
-    },
-    {
-      name: "Product 2",
-      price: "$249",
-      description:
-        "An AI-driven analytics solution tailored for businesses.",
-      rating: 4.8,
-      application: "Data analytics, performance tracking, and reporting."
-    }
-  ],
-
-  staff: [
-    {
-      name: "Jane Doe",
-      title: "Chief Executive Officer",
-      contactInfo: {
-        email: "jane@placeholdercompany.com",
-        phone: "+1 (555) 234-5678",
-        socials: {
-          linkedin: "https://linkedin.com/in/janedoe",
-          twitter: "https://twitter.com/janedoe"
+    contact: {
+        address: {
+            street: "1313 Bloodmoon Boulevard",
+            city: "Nocturne City",
+            state: "Shadow Province",
+            zip: "66613",
+            country: "Transylvaniar"
+        },
+        phone: "+1 (666) 131-3131",
+        email: "contact@crimsonveil.com",
+        form: {
+            fields: ["name", "email", "subject", "message"],
+            submitText: "Send Raven",
+            successMessage:
+                "Your message has been received. A familiar will contact you before the next full moon."
+        },
+        additionalInfo: {
+            hours: "Dusk–Dawn: 7pm – 5am",
+            mapEmbedUrl: "https://maps.google.com/?q=Crimson+Veil+Enterprises"
         }
-      },
-      blurb: "Leading with vision, fueled by innovation."
     },
-    {
-      name: "John Smith",
-      title: "Lead Developer",
-      contactInfo: {
-        email: "john@placeholdercompany.com",
-        phone: "+1 (555) 345-6789",
-        socials: {
-          github: "https://github.com/johnsmith",
-          linkedin: "https://linkedin.com/in/johnsmith"
+
+    pastWork: [
+        {
+            img: "images/work1.jpg",
+            company: "BloodBank Systems",
+            shortDescription:
+                "Developed an encrypted blood inventory platform that optimized donation logistics by 40%."
+        },
+        {
+            img: "images/work2.jpg",
+            company: "Moonlight Manor",
+            shortDescription:
+                "Reimagined the haunted estate's branding and web presence with chilling elegance."
         }
-      },
-      blurb: "Turning ideas into interactive digital experiences."
-    }
-  ],
+    ],
 
-  socials: {
-    facebook: "https://facebook.com/placeholdercompany",
-    instagram: "https://instagram.com/placeholdercompany",
-    twitter: "https://twitter.com/placeholderco",
-    linkedin: "https://linkedin.com/company/placeholdercompany",
-    youtube: "https://youtube.com/@placeholdercompany"
-  },
+    products: [
+        {
+            name: "Noctis Lens",
+            price: "₵199",
+            description:
+                "A supernatural device that enhances vision in complete darkness while revealing hidden auras.",
+            rating: 4.9,
+            application:
+                "Perfect for night patrols, moonlit hunts, and surveillance of rival covens."
+        },
+        {
+            name: "Hemlock AI",
+            price: "₵499",
+            description:
+                "An ancient intelligence bound within digital code—analyzing data, predicting prey, and managing coven affairs.",
+            rating: 4.8,
+            application:
+                "Ideal for cryptic analytics, prophecy simulation, and eternal business management."
+        }
+    ],
+    staff: [
+        {
+            name: "Countess Vespera Drayke",
+            title: "Supreme Overseer",
+            contactInfo: {
+                email: "vespera@crimsonveil.com",
+                phone: "+1 (666) 234-5678",
+                socials: {
+                    linkedin: "https://linkedin.com/in/vesperadrayke",
+                    twitter: "https://twitter.com/countessvespera"
+                }
+            },
+            blurb:
+                "Guiding the coven with wisdom older than the dawn — and sharper than her fangs."
+        },
+        {
+            name: "Lucien Graves",
+            title: "Lead NecroTechnologist",
+            contactInfo: {
+                email: "lucien@crimsonveil.com",
+                phone: "+1 (666) 345-6789",
+                socials: {
+                    github: "https://github.com/luciengraves",
+                    linkedin: "https://linkedin.com/in/luciengraves"
+                }
+            },
+            blurb:
+                "Breathing life into code — or what's left of it — through dark innovation and arcane algorithms."
+        }
+    ],
 
-  testimonials: [
-    {
-      name: "Happy Client",
-      company: "Success Inc.",
-      quote:
-        "Placeholder Company transformed our digital presence — amazing results!"
+    socials: {
+        facebook: "https://facebook.com/crimsonveil",
+        instagram: "https://instagram.com/crimsonveil",
+        twitter: "https://twitter.com/crimsonveilco",
+        linkedin: "https://linkedin.com/company/crimsonveil",
+        youtube: "https://youtube.com/@crimsonveil"
     },
-    {
-      name: "Tech Partner",
-      company: "InnovateX",
-      quote:
-        "Reliable, creative, and professional. A great team to collaborate with."
-    }
-  ],
 
-  careers: [
-    {
-      position: "Frontend Developer",
-      location: "Remote",
-      description:
-        "Looking for a creative developer skilled in React and UI/UX design.",
-      applyEmail: "careers@placeholdercompany.com"
-    },
-    {
-      position: "Marketing Coordinator",
-      location: "New York Office",
-      description:
-        "Seeking an energetic individual to drive brand engagement campaigns.",
-      applyEmail: "careers@placeholdercompany.com"
-    }
-  ],
+    testimonials: [
+        {
+            name: "Lord Alaric",
+            company: "House Umbra",
+            quote:
+                "Crimson Veil transformed our ancient archives into a digital sanctuary — truly mesmerizing craftsmanship."
+        },
+        {
+            name: "Lady Seraphine",
+            company: "The Bloodborne Guild",
+            quote:
+                "Reliable, enigmatic, and delightfully sinister. Their artistry rivals the beauty of eternal night."
+        }
+    ],
 
-  faqs: [
-    {
-      question: "What industries do you specialize in?",
-      answer:
-        "We work across multiple sectors including tech, retail, and education."
-    },
-    {
-      question: "How can I request a quote?",
-      answer:
-        "Use our contact form or email us directly at info@placeholdercompany.com."
-    }
-  ]
+    careers: [
+        {
+            position: "Shadowfront Developer",
+            location: "Remote (Crypt Access Required)",
+            description:
+                "Seeking a skilled developer fluent in JavaScript and forbidden incantations. Must be comfortable working under moonlight.",
+            applyEmail: "join@crimsonveil.com"
+        },
+        {
+            position: "Public Enchantments Coordinator",
+            location: "Castle Nocturna Office",
+            description:
+                "Searching for a charismatic familiar to manage mortal engagement and illusionary brand campaigns.",
+            applyEmail: "join@crimsonveil.com"
+        }
+    ],
+
+    faqs: [
+        {
+            question: "What realms do you operate in?",
+            answer:
+                "Our coven spans across mortal, nocturnal, and digital domains — specializing in eternal innovation and dark design."
+        },
+        {
+            question: "How can I summon a consultation?",
+            answer:
+                "Use our contact form or send a raven to contact@crimsonveil.com — we'll respond by twilight."
+        }
+    ],
+    foundedDate: 1437,
+    foundingStory: `lorem`
 };
 
 const companyName = companyData.companyName
+companyData.founders = [
+        companyData.staff[0],
+        companyData.staff[1]
+]
 
-app.get(`/`, (req,res) => {
+app.get(`/`, (req, res) => {
     res.render('home.ejs', {
         companyName: companyName
     })
 })
+
+app.get(`/history`, (req, res) => {
+    res.render('history.ejs', {
+        companyName: companyName
+    })
+})
+
 
 //Listening
 app.listen(3000, () => {
