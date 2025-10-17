@@ -239,6 +239,18 @@ app.get(`/products`, (req, res) => {
         products: companyData.products
     })
 })
+
+app.get(`/products/:productID`, (req, res) => {
+    const productId = req.params.productID
+    res.render('show-product.ejs', {
+        companyName: companyName,
+        socials: companyData.socials,
+        contactInfo: companyData.contact,
+
+        product: companyData.products[productId]
+    })
+})
+
 app.get(`/staff`, (req, res) => {
     res.render('staff.ejs', {
         companyName: companyName,

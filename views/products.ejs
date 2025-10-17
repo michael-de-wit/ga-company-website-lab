@@ -3,16 +3,18 @@
 
 <h1>Products</h1>
 <ul>
-    <% products.forEach(product => { %>
-        <li>
-            <h3><%= product.name %></h3>
-            <div>
-                <p><%= product.price %></p>
-                <p><%= product.rating %>🩸</p>
-            </div>
-            <p><%= product.description %></p>
-            <p><%= product.application %></p>
-        </li>
+    <% products.forEach((product, index) => { %>
+        <a href="/products/<%= index %>">
+            <li>
+                <h3><%= product.name %></h3>
+                <div>
+                    <p><%= product.price %></p>
+                    <p><%= product.rating %>🩸</p>
+                </div>
+                <p><%= product.description %></p>
+                <p><%= product.application %></p>
+            </li>
+        </a>
     <% }) %>
 </ul>
 
