@@ -1,0 +1,66 @@
+/* Header */
+* {
+    box-sizing: border-box
+}
+
+html {
+    background-color:rgb(248, 226, 226)
+}
+
+body {
+    margin: 0;
+}
+
+/* Nav */
+nav {
+    display: grid;
+    grid-template-columns: 1fr auto; 
+    padding: 1rem;
+    background-color: rgb(98, 31, 8);
+    color: white;
+}
+
+nav a {
+   color: white;
+   text-decoration: none;
+}
+nav #company-name a {
+    font-size: 1.125rem;
+    font-weight: 700;
+}
+
+nav div {
+    display: flex;
+    gap: 1rem;
+}
+
+/* Footer */
+footer {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    background-color: rgb(98, 31, 8);
+    padding: 4rem;
+    color: white;
+}
+
+footer a {
+    color: white;
+}
+
+footer div {
+    display: flex;
+    gap: 2rem;
+}
+
+footer li {
+    text-align: center;
+}
+
+ul {
+    padding: 0;
+    margin: 0;
+}
+
+li {
+    list-style: none;
+}
