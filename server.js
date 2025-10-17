@@ -196,7 +196,16 @@ companyData.founders = [ // Add the first 2 staff members as the founds
 
 app.get(`/`, (req, res) => {
     res.render('home.ejs', {
-        companyName: companyName
+        companyName: companyName,
+        socials: companyData.socials,
+        contactInfo: companyData.contact,
+
+        companyInfo: companyData.companyInfo,
+        pastWork: companyData.pastWork,
+        product: companyData.products,
+        testimonials: companyData.testimonials,
+        faqs: companyData.faqs
+        
     })
 })
 

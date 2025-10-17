@@ -1,6 +1,57 @@
 <%- include(`./partials/htmlhead`) %>
-    <%- include(`./partials/nav`)%>
-    <h1><%= companyName %></h1>
+<%- include(`./partials/nav`)%>
 
-</body>
-</html>
+<h1><%= companyInfo.tagline %></h1>
+<p><%= companyInfo.description%></p>
+
+<div id="carousel-container">
+    <% pastWork.forEach((project, index) => { %>
+        <% if(index === 0) {%>
+            <div id="carousel-item">
+                <img src="<%= project.img %>"/>
+            </div>
+        <% } else {%>
+            <div id="carousel-item" class="hidden">
+                <img src="<%= project.img %>"/>
+            </div>
+        <% } %>
+    <% }) %>
+    <div id="carousel-controls">
+        <div id="carousel-previous">Previous</div>
+        <div id="carousel-next">Next</div>
+    </div>
+</div>
+<script> 
+    let carouselPosition = 0
+    const carouselControls = document.getElementById("carousel-controls")
+    carouselControls.addEventListener('click', (event) => {
+        const button = event.target.id
+        
+        console.log(button);
+        
+        const carouselItems = document.querySelectorAll(`#carousel-item`)
+        const carouselSize = carouselItems.length
+
+        if(button === `carousel-next`) {
+            carouselItems[carouselPosition].style.toggle(`hidden`)
+            if(carouselPosition === carouselSize - 1) {
+                carouselPosition = 0
+            } else {
+                carouselPosition++
+            }
+            carouselItems[carouselPosition].style.toggle(`hidden`)
+        } else if(button === `carousel-previous`) {
+            carouselItems[carouselPosition].style.toggle(`hidden`)
+            if(carouselPosition === 0) {
+                carouselPosition = carouselSize - 1
+            } else {
+                carouselPosition--
+            }
+            carouselItems[carouselPosition].style.toggle(`hidden`)
+
+        }
+        
+    })
+</script>
+
+<%- include(`./partials/footer`) %>
