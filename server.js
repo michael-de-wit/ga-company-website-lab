@@ -64,7 +64,7 @@ const companyData = {
             name: "Hemlock AI",
             price: "₵499",
             description:
-                "An ancient intelligence bound within digital code—analyzing data, predicting prey, and managing coven affairs.",
+            "An ancient intelligence bound within digital code—analyzing data, predicting prey, and managing coven affairs.",
             rating: 4.8,
             application:
                 "Ideal for cryptic analytics, prophecy simulation, and eternal business management."
@@ -74,6 +74,7 @@ const companyData = {
         {
             name: "Countess Vespera Drayke",
             title: "Supreme Overseer",
+            photo: `images/image01.png`,
             contactInfo: {
                 email: "vespera@crimsonveil.com",
                 phone: "+1 (666) 234-5678",
@@ -83,11 +84,12 @@ const companyData = {
                 }
             },
             blurb:
-                "Guiding the coven with wisdom older than the dawn — and sharper than her fangs."
+            "Guiding the coven with wisdom older than the dawn — and sharper than her fangs."
         },
         {
             name: "Lucien Graves",
             title: "Lead NecroTechnologist",
+            photo: `images/image02.png`,
             contactInfo: {
                 email: "lucien@crimsonveil.com",
                 phone: "+1 (666) 345-6789",
@@ -97,10 +99,10 @@ const companyData = {
                 }
             },
             blurb:
-                "Breathing life into code — or what's left of it — through dark innovation and arcane algorithms."
+            "Breathing life into code — or what's left of it — through dark innovation and arcane algorithms."
         }
     ],
-
+    
     socials: [
         {
             type: `facebook`,
@@ -193,7 +195,20 @@ app.get(`/history`, (req, res) => {
         foundingDate: companyData.foundedDate,
 
         socials: companyData.socials,
-        contactInfo: companyData.contact
+        contactInfo: companyData.contact,
+
+    })
+})
+app.get(`/work`, (req, res) => {
+    res.render('work.ejs', {
+        companyName: companyName,
+        foundingStory: companyData.foundingStory,
+        founderNames: companyData.founders,
+        foundingDate: companyData.foundedDate,
+
+        socials: companyData.socials,
+        contactInfo: companyData.contact,
+
     })
 })
 

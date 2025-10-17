@@ -1,13 +1,22 @@
     <footer>
         <div>
             <ul>
-                <% socials.forEach(social => { %>
+                <% socials.forEach(social => { %> 
                     <a href=`<%= social.link %>`><%= social.type %></a>
                 <% }) %>
             </ul>
         </div>
         <div>
-
+            <ul>
+                <li><%= contactInfo.address.street %></li>
+                <li><%= contactInfo.address.city %></li>
+                <li><%= contactInfo.address.state %></li>
+            </ul>
+            <ul>
+                <li><%= contactInfo.phone %></li>
+                <li><%= contactInfo.email %></li>
+                <li><%= contactInfo.additionalInfo.hours %></li>
+            </ul>
         </div>
     </footer>
 </body>
