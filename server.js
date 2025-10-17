@@ -244,6 +244,9 @@ app.get(`/contact`, (req, res) => {
         companyName: companyName,
         socials: companyData.socials,
         contactInfo: companyData.contact,
+
+        form: companyData.contact.form,
+        map: companyData.contact.additionalInfo.mapEmbedUrl
     })
 })
 app.get(`/links`, (req, res) => {
