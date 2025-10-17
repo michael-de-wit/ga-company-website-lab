@@ -1,4 +1,13 @@
 <%- include(`./partials/htmlhead`) %>
-<%- include(`./partials/nav`)%>
+    <%- include(`./partials/nav`)%>
+
+<h1>External Links</h1>
+
+<ul>
+    <% socials.forEach(social=> { %>
+  
+        <a href=`<%=social.link %>`><li><%= social.type %></li></a>
+        <% }) %>
+</ul>
 
 <%- include(`./partials/footer`) %>
